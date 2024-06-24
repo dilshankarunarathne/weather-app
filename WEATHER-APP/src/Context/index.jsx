@@ -9,11 +9,10 @@ export const StateContextProvider = ({ children }) => {
     const [place, setPlace] = useState('Jaipur')
     const [thisLocation, setLocation] = useState('')
 
-    // fetch api
     const fetchWeather = async () => {
         const options = {
             method: 'GET',
-            url: 'https://visual-crossing-weather.p.rapidapi.com/forecast',
+            url: 'https://weather-api99.p.rapidapi.com/weather',
             params: {
                 aggregateHours: '24',
                 location: place,
@@ -22,8 +21,8 @@ export const StateContextProvider = ({ children }) => {
                 shortColumnNames: 0,
             },
             headers: {
-                'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
-                'X-RapidAPI-Host': 'visual-crossing-weather.p.rapidapi.com'
+                'X-RapidAPI-Key': c4bd239705mshf56569965352bddp1c42e5jsn305d5cf1a62b,
+                'X-RapidAPI-Host': 'weather-api99.p.rapidapi.com'
             }
         }
 
@@ -36,7 +35,7 @@ export const StateContextProvider = ({ children }) => {
             setWeather(thisData.values[0])
         } catch (e) {
             console.error(e);
-            // if the api throws error.
+            
             alert('This place does not exist')
         }
     }
