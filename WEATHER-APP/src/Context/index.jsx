@@ -12,7 +12,7 @@ export const StateContextProvider = ({ children }) => {
     const fetchWeather = async () => {
         const options = {
             method: 'GET',
-            url: 'https://visual-crossing-weather.p.rapidapi.com/forecast',
+            url: 'https://weather-api99.p.rapidapi.com/weather',
             params: {
                 aggregateHours: '24',
                 location: place,
@@ -62,5 +62,5 @@ export const StateContextProvider = ({ children }) => {
     );
 };
 
-// Correctly format the useStateContext function
+
 export const useStateContext = () => useContext(StateContext);
