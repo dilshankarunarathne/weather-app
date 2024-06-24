@@ -9,7 +9,6 @@ export const StateContextProvider = ({ children }) => {
     const [place, setPlace] = useState('Jaipur')
     const [thisLocation, setLocation] = useState('')
 
-    // fetch api
     const fetchWeather = async () => {
         const options = {
             method: 'GET',
