@@ -8,7 +8,7 @@ function App() {
 
   const [input, setInput] = useState('')
   const { weather, thisLocation, values, place, setPlace } = useStateContext()
-  // console.log(weather)
+ 
 
   const submitCity = () => {
     setPlace(input)
@@ -23,7 +23,7 @@ function App() {
           <img src={search} alt="search" className='w-[1.5rem] h-[1.5rem]' />
           <input onKeyUp={(e) => {
             if (e.key === 'Enter') {
-              // sumit the form
+              
               submitCity()
             }
           }} type="text" placeholder='Search city' className='focus:outline-none w-full text-[#212121] text-lg' value={input} onChange={e => setInput(e.target.value)} />
