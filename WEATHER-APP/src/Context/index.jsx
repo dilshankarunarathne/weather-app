@@ -6,7 +6,7 @@ const StateContext = createContext()
 export const StateContextProvider = ({ children }) => {
     const [weather, setWeather] = useState({})
     const [values, setValues] = useState([])
-    const [place, setPlace] = useState('Colombo')
+    const [place, setPlace] = useState('Trincomalee')
     const [thisLocation, setLocation] = useState('')
 
     const fetchWeather = async () => {
@@ -29,14 +29,14 @@ export const StateContextProvider = ({ children }) => {
         try {
             const response = await axios.request(options);
             console.log(response.data)
-            const thisData = Object.values(response.data.locations)[0]
-            setLocation(thisData.address)
-            setValues(thisData.values)
-            setWeather(thisData.values[0])
+
+            setLocation(response.data.name)
+            setValues(response.data.values)
+            setWeather(response.data.values[0])
         } catch (e) {
             console.error(e);
             
-            alert('This place does not exist')
+            alert('An Error Occurred ');
         }
     }
 
