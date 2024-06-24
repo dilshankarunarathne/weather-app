@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react'
 import { useDate } from '../Utils/useDate'
 import sun from '../assets/icons/sun.png'
